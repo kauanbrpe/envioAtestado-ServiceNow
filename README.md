@@ -8,17 +8,26 @@ Como atividade proposta na **Trilha de ServiceNow Estagiários EDX** foi um prá
 - Supervisor
 - Colaborador
 
+## Adicionais
+
+- Número únicos e automáticos de ID para as três tabelas
+- Cálculo automático de idade de acordo com a Data de Nascimento
+- Ask for Approval do Supervisor
+
 ## 💻 Record Producer
 
 - Envio de Atestado (para tabela Atestados)
 
 ![RecordProducer](img/record.png)
 
-## Adicionais
+## Tabela - Atestados
+![Atestados](img/atestados.png)
 
-- Número únicos e automáticos de ID para as três tabelas
-- Cálculo automático de idade de acordo com a Data de Nascimento
-- Ask for Approval do Supervisor
+## Tabela - Supervisor
+![Supervisor](img/supervisor.png)
+
+## Form - Colaborador
+![Colaborador](img/colaborador.png)
 
 ## 🎲 Modelo Lógico
 ![Modelo Lógico](img/modelologico.png)
