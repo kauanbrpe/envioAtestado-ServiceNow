@@ -20,10 +20,10 @@ Como atividade proposta na **Trilha de ServiceNow Estagiários EDX** foi um prá
 
 ![RecordProducer](img/record.png)
 
-## Tabela - Atestados
+## Form - Atestados
 ![Atestados](img/atestados.png)
 
-## Tabela - Supervisor
+## Form - Supervisor
 ![Supervisor](img/supervisor.png)
 
 ## Form - Colaborador
