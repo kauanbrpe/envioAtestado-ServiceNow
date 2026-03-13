@@ -13,6 +13,7 @@ Como atividade proposta na **Trilha de ServiceNow Estagiários EDX** foi um prá
 - Número únicos e automáticos de ID para as três tabelas
 - Cálculo automático de idade de acordo com a Data de Nascimento
 - Ask for Approval do Supervisor
+- User ID automático
 
 ## 💻 Record Producer
 
