@@ -4,13 +4,12 @@ Como atividade proposta na **Trilha de ServiceNow Estagiários EDX** foi um prá
 
 ## 📃 Tabelas
 
-- Atestados
-- Supervisor
-- Colaborador
+- Atestados (Medical Certificate extends Task)
+- Supervisor (Supervisor extends User)
+- Colaborador (Employee extends User)
 
 ## Adicionais
 
-- Número únicos e automáticos de ID para as três tabelas
 - Cálculo automático de idade de acordo com a Data de Nascimento
 - Ask for Approval do Supervisor
 - User ID automático
@@ -35,35 +34,38 @@ Como atividade proposta na **Trilha de ServiceNow Estagiários EDX** foi um prá
 
 Sistema utilizado: *BrModelo*
 
-## 🆔 Números únicos e automáticos de ID para as três tabelas
-![Number](img/number.png)
+## 🆔 UserID Automático
+```bash
+(function executeRule(current, previous /*null when async*/) {
 
-Sistema utilizado: *ServiceNow - Number Maintenance*
+	current.user_name = current.email.split("@")[0];
+
+})(current, previous);
+```
+
+Linguagem utilizada: *JavaScript*
 
 ## ➕ Cálculo automático de idade de acordo com a Data de Nascimento
 
 ```bash
-function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-   if (isLoading || newValue === '') {
-      return;
-   }
+(function executeRule(current, previous /*null when async*/) {
+		
+		var birth = new GlideDate();
+		birth.setValue(current.date_of_birth);
 
-   var birthDate = new Date(newValue);
-   var today = new Date();
+        var today = new GlideDate();
+        var age = parseInt(today.getByFormat('yyyy'), 10) - parseInt(birth.getByFormat('yyyy'), 10);
 
-   var age = today.getFullYear() - birthDate.getFullYear();
-   var m = today.getMonth() - birthDate.getMonth();
-   var d = today.getDate() - birthDate.getDate();
+       var tMd = today.getByFormat('MMdd');
+        var bMd = birth.getByFormat('MMdd');
 
-   if ( m< 0 || (m === 0 && d < 0)) {
-		age--;
-   }
+        if (tMd < bMd){
+            age--;
+        }
 
-   g_form.setValue('idade', age);
+        current.age = age;
 
-   //Type appropriate comment here, and begin script below
-   
-}
+})(current, previous);
 ```
 
 Linguagem utilizada: *JavaScript*
